@@ -1,0 +1,51 @@
+version: "3.9"
+
+services:
+
+  db:
+
+    image: postgres
+
+    container_name: db
+
+    environment:
+
+      - POSTGRES_PASSWORD=123
+
+      - POSTGRES_USER=postgres
+
+      - POSTGRES_DB=urlShortcut
+
+      - PGDATA=/var/lib/postgresql/data
+
+    volumes:
+
+      - ./db/shortcut/data:/var/lib/postgresql/data
+
+    ports:
+
+      - "5432:5432"
+
+    restart: always
+
+  app:
+
+    image: shortcut
+
+    container_name: shortcut
+
+    environment:
+
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/urlShortcut
+
+      - SPRING_DATASOURCE_USERNAME=postgres
+
+      - SPRING_DATASOURCE_PASSWORD=123
+
+    ports:
+
+      - 127.0.0.1:80:8080
+
+    depends_on:
+
+      - db

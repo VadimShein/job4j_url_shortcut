@@ -35,3 +35,17 @@ The number of hits on the converted link is counted and displayed as statistics.
 #### Getting statistic
 
 ![ScreenShot](./images/get_statistic.PNG)
+
+### Build with Docker-compose
+
+**Install maven:**
+```sudo apt-get install maven```
+
+**Build maven project:**
+```mvn install```
+
+**Build docker image:**
+```docker build -t shortcut .```
+
+**Start docker:**
+```docker-compose up```
