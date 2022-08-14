@@ -49,3 +49,17 @@ The number of hits on the converted link is counted and displayed as statistics.
 
 **Start docker:**
 ```docker-compose up```
+
+
+### Deploy with k8s
+**Create Secret:**
+```kubectl apply -f postgresdb-secret.yml```
+
+**Create ConfigMap:**
+```kubectl apply -f postgesdb-configmap.yml```
+
+**Create Spring-Boot deployment:**
+```kubectl apply -f spring-boot-deployment.yml```
+
+**Start application:**
+```minikube service spring-boot-service```
