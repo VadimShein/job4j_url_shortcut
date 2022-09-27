@@ -10,13 +10,13 @@
     </parent>
 
     <groupId>ru.job4j</groupId>
-    <artifactId>job4j_url_shortcut</artifactId>
+    <artifactId>url_shortcut</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
     <name>url_shortcut</name>
 
     <properties>
-        <java.version>11</java.version>
+        <java.version>13</java.version>
     </properties>
 
     <dependencies>
